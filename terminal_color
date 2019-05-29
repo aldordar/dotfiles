@@ -1,0 +1,37 @@
+# System-wide .bashrc file for interactive bash(1) shells.
+if [ -z "$PS1" ]; then
+   return
+fi
+
+# Make bash check its window size after a process completes
+shopt -s checkwinsize
+
+[ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
+
+export TERM=xterm-color
+export CLICOLOR=1
+export LSCOLORS=gxexxxxxfxxxxxfxfxgxgx
+
+alias ll='ls -l'
+alias lla='ls -la'
+
+#Los comandos se añaden al historial nada más usarlos
+shopt -s histappend
+
+#Número de comandos en el historial
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+
+#Buscar comandos que empiecen por algo. Ej: cd +Flecha arriba, busca comandos que empiezan por cd
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+#Lo que sale en el Prompt:
+#HOST_NAME: CURRENT_DIRECTORY USER_NAME$
+
+txtgrn='\e[0;32m'   # Green
+txtyellow='\e[0;33m'  # Yellow
+txtreset='\e[0m'    # Text Reset
+
+#Prompt Terminal ==> Muestra el HOSTNAME:~ USUARIO$
+export PS1="\h:\[\e[0;33m\]\W \[\e[0;32m\]\[\$(vcprompt)\]\[\e[0m\]\u$ "

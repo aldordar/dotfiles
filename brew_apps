@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Brew Packages
+
+brew install tree
+#brew install vim
+brew install vcprompt
+brew install git
+
+# MacOS Applications
+
+brew cask install google-chrome
+brew cask install spotify
+brew cask install discord
+brew cask install skype
+brew cask install gimp
+brew cask install vlc
+brew cask install virtualbox
+brew cask install mamp
+brew cask install enpass
+brew cask install spectacle
+brew cask install appcleaner
+#brew cask install wireshark
+brew cask install atom
+brew cask install android-file-transfer

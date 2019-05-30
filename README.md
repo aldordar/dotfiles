@@ -17,7 +17,7 @@ Luego descargar [Command Line Tools](https://developer.apple.com/downloads/more)
 
 ### Instalar HomeBrew
 
-[Link de la web](https://brew.sh/index_es) ==> Copiar y pegar el comando que aparece ahí.
+[Link de la web](https://brew.sh/index_es) ==> Copiar y pegar el comando que aparece ahí. ***INSTALAR***
 
 1. Instalar ruby  `$ brew install ruby`
 2. Instalar el Ruby Version Manager (RVM): `$ \curl -sSL https://get.rvm.io | bash -s stable`
@@ -32,12 +32,28 @@ Luego descargar [Command Line Tools](https://developer.apple.com/downloads/more)
 ###### Muy Útil
 Instalar __pry__ (Intérprete de Ruby) ==>`$ gem install pry`
 
+<span style="color:red"></span>.
 
 ## Ficheros del Repositorio
 
 #### brew_apps
 
 > Contiene una lista de los programas que podemos instalar a través de brew:
+
+<span style="color:red">IMPORTANTE!!!</span>
+##### Para mantener los programas que no son de la AppleStore usamos la herramienta *cask*
+
+```bash
+$ brew install cask
+```
+
+Una vez hecho esto ya podemos instalar los programas que queramos: tipo ==> `$ brew cask install spotify`
+
+Para actualizar los programas instalados con la herramienta ***cask***, simplemente hacer:
+
+```bash
+$ brew cask upgrade
+```  
 
 * Copiar el contenido del fichero
 * Crear un script en el home de mi máquina: `$ touch brew.sh`

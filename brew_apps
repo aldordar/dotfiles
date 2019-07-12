@@ -16,7 +16,7 @@ brew cask install discord
 brew cask install skype
 brew cask install gimp
 brew cask install vlc
-brew cask install virtualbox
+#brew cask install virtualbox
 brew cask install mamp
 brew cask install enpass
 brew cask install spectacle

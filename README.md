@@ -85,3 +85,4 @@ $ brew cask upgrade
 - Servicio VPN ULL ==> GlobalProtect
 - Audacity
 - uTorrent
+- iMovie

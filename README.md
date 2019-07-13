@@ -86,3 +86,4 @@ $ brew cask upgrade
 - Audacity
 - uTorrent
 - iMovie
+- Padbury Clock

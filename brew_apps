@@ -7,6 +7,7 @@ brew install tree
 brew install vcprompt
 brew install git
 brew install ffmpeg
+brew install node
 
 # MacOS Applications
 
@@ -24,3 +25,4 @@ brew cask install appcleaner
 #brew cask install wireshark
 brew cask install atom
 brew cask install android-file-transfer
+brew cask install visual-studio-code

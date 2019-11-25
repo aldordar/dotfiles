@@ -6,6 +6,7 @@ brew install tree
 #brew install vim
 brew install vcprompt
 brew install git
+brew install miniserve
 brew install ffmpeg
 brew install node
 
@@ -23,6 +24,8 @@ brew cask install enpass
 brew cask install spectacle
 brew cask install appcleaner
 #brew cask install wireshark
+#brew cask install slack
+#brew cask install sourcetree
 brew cask install atom
 brew cask install android-file-transfer
 brew cask install visual-studio-code

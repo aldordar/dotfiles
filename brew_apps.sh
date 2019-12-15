@@ -4,12 +4,12 @@
 
 brew install tree
 #brew install vim
-#brew install vcprompt
 brew install git
 brew install miniserve
 brew install htop
 brew install ffmpeg
 brew install node
+brew install tmux
 
 # MacOS Applications
 

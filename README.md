@@ -80,8 +80,8 @@ $ brew cask upgrade
 #### Fichero /etc/bashrc
 
 1. Editar el fichero `/etc/bashrc`.
-2. Copiar el contenido del fichero `prompt_pro` del repositorio y pegarlo en `/etc/bashrc`.
-3. Hay que hacerlo con permisos `e **_root_** y si se edita con vim ==> `Esc + :wq!` para salir
+2. Copiar el contenido del fichero **_`prompt_pro`_** del repositorio y pegarlo en `/etc/bashrc`.
+3. Hay que hacerlo con permisos `e **_root_** y si se edita con vim ==> **_Esc + :wq!_** para salir
 
 ## Aplicaciones para Instalar Manualmente:
 

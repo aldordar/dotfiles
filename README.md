@@ -68,13 +68,20 @@ $ brew cask upgrade
 
 - Copiar y Pegar.
 
-#### terminal_color
+#### git_status_color.txt
 
-> Cambiar las preferencias y colores del prompt
+> Contiene estilos para git status.
 
-- Editar el fichero `/etc/bashrc` (para editarlo necesitamos hacerlo como root), para que los cambios se hagan tanto en el usuario como en el _root_.
-- Copiar el contenido de **_terminal_color_** y pegarlo en `/etc/bashrc`.
-- Reiniciar la terminal y hecho.
+- Ejecutar los comandos del fichero.
+
+
+## Configuración de la Terminal
+
+#### Fichero /etc/bashrc
+
+1. Editar el fichero `/etc/bashrc`.
+2. Copiar el contenido del fichero `prompt_pro` del repositorio y pegarlo en `/etc/bashrc`.
+3. Hay que hacerlo con permisos `e **_root_** y si se edita con vim ==> `Esc + :wq!` para salir
 
 ## Aplicaciones para Instalar Manualmente:
 

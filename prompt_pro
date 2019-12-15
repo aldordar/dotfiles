@@ -1,0 +1,75 @@
+# System-wide .bashrc file for interactive bash(1) shells.
+if [ -z "$PS1" ]; then
+	   return
+   fi
+
+   # Make bash check its window size after a process completes
+   shopt -s checkwinsize
+
+   [ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
+
+   export TERM=xterm-color
+   export CLICOLOR=1
+   export LSCOLORS=gxexxxxxfxxxxxfxfxgxgx
+
+   alias ll='ls -l'
+   alias lla='ls -la'
+
+   #Los comandos se añaden al historial nada más usarlos
+   shopt -s histappend
+
+   #Número de comandos en el historial
+   export HISTSIZE=5000
+   export HISTFILESIZE=10000
+
+   #Buscar comandos que empiecen por algo. Ej: cd +Flecha arriba, busca comandos que empiezan por cd
+   bind '"\e[A": history-search-backward'
+   bind '"\e[B": history-search-forward'
+
+   #Lo que sale en el Prompt:
+   #HOST_NAME: CURRENT_DIRECTORY USER_NAME$
+
+   reset='\[\e[0m\]' 		#Reset Color
+   grey='\[\e[0;37m\]'		#Grey
+   green='\[\e[0;32m\]'        	#Green
+   yellow='\[\e[0;33m\]'       	#Yellow
+   red='\[\e[0;31m\]'          	#Red
+   ugrey='\[\e[4;37m\]'         #Underlined grey
+   biwhite='\[\e[1;97m\]'       #Bold Intense White
+
+   #Prompt Terminal ==> Muestra el HOSTNAME:~ USUARIO$
+
+   #Highlight the user name when logged in as root.
+	if [[ "${USER}" == "root" ]]; then
+	    userStyle="${biWhite}";
+    	else
+	    userStyle="${reset}";
+	fi;
+
+	# Highlight the hostname when connected via SSH.
+	if [[ "${SSH_TTY}" ]]; then
+	    hostStyle="${ugrey}";
+	else
+	    hostStyle="${grey}";
+	fi;
+
+	git_branch(){
+	   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
+	}
+
+	parse_git_dirty() {
+	   [[ -n "$(git status -s 2> /dev/null)" ]] && echo '* ';
+	}
+
+	PS1="${reset}";
+	PS1+="${hostStyle}\h:"; #HOSTNAME
+	PS1+="${yellow}\W "; #WORKING DIRECTORY
+	PS1+="${green}\$(git_branch)";
+	PS1+="${red}\$(parse_git_dirty)";
+	PS1+="${userStyle}\u\[${reset}\]$ "; #USER
+	export PS1;
+
+
+   #Para evitar mensajes de alerta en la terminal
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+

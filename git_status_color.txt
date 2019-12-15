@@ -1,0 +1,5 @@
+git config --global color.status.added "green"
+git config --global color.status.updated "green"
+git config --global color.status.branch "magenta normal bold"
+git config --global color.status.changed "yellow"
+git config --global color.status.untracked "red"

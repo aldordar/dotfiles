@@ -1,0 +1,58 @@
+#!/bin/bash
+
+echo -n "Enter the configuration scope (global/local) > "
+read setup
+
+if [ "$setup" = "global" ]; then
+	echo -n "Username > "
+	read usernameg
+	git config --global user.name "$usernameg"
+	echo -n "Email > "
+	read emailg
+	git config --global user.email "$emailg"
+	echo -e "Avoiding introducing password..."
+	git config --global credential.helper cache
+	echo -e "Push every change to git repository..."
+	git config --global push.default "matching"
+	echo -e "Avoiding unnecessary confirmations..."
+	git config --global branch.autosetuprebase always
+	echo -n "Default core editor (vim/nano/emacs..) > "
+	read editorg
+	git config --global core.editor $editorg
+	echo -e "Setting colors for the UI..."
+	git config --global color.ui true
+	echo -e "Setting colors for the status..."
+	git config --global color.status.added "green"
+	git config --global color.status.updated "green"
+	git config --global color.status.branch "magenta normal bold"
+	git config --global color.status.changed "yellow"
+	git config --global color.status.untracked "red"
+	echo -e "\nDONE √\n"
+elif [ "$setup" = "local" ]; then
+	echo -n "Username > "
+	read usernamel
+	git config user.name "$usernamel"
+	echo -n "Email > "
+	read emaill
+	git config user.email "$emaill"
+	echo -e "Avoiding introducing password..."
+	git config credential.helper cache
+	echo -e "Push every change to git repository..."
+	git config push.default "matching"
+	echo -e "Avoiding unnecessary confirmations..."
+	git config branch.autosetuprebase always
+	echo -n "Default core editor (vim/nano/emacs..) > "
+	read editorl
+	git config core.editor $editorl
+	echo -e "Setting colors for the UI..."
+	git config color.ui true
+	echo -e "Setting colors for the status..."
+	git config color.status.added "green"
+	git config color.status.updated "green"
+	git config color.status.branch "magenta normal bold"
+	git config color.status.changed "yellow"
+	git config color.status.untracked "red"
+	echo -e "\nDONE √\n"
+else
+	echo -e "\nPlease introduce a valid scope\n"
+fi

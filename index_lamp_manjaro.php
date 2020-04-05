@@ -14,8 +14,8 @@
     li {
       background-color: rgba(0, 0, 0, 0.05);
       display: flex;
-      width: 50%;
-      padding: 5px;
+      width: 48%;
+      padding: 10px;
       border: 2px solid rgba(0, 0, 0, 0.1);
       transition: all .2s;
     }
@@ -23,8 +23,8 @@
       border: 2px solid rgba(0, 0, 0, 0.2);
     }
     .dir, .file {
-      margin: 0 6px 0 0;
-      width: 5%;
+      margin: 0 12px 0 0;
+      width: 1.52rem;
     }
     .dir {
       background: url('https://image.flaticon.com/icons/svg/148/148947.svg');
@@ -129,11 +129,13 @@
     <ul class="list-projects">
     <?php
     foreach($files as $file){
+      $sub_files = scandir($file);
+      (in_array('dist', $sub_files)) ? $route = '/dist' : $route = '';
       (filetype($file) == 'dir') ? $icon = 'dir' : $icon = 'file';
       (filetype($file) == 'dir') ? $id = '/' : $id = '';
       (filetype($file) == 'dir') ? $filesize = sizeFormat(folderSize($file)) : $filesize = my_filesize(filesize($file));
 
-      echo '<li class="mb-1"><div class="'.$icon.'"></div><a class="link-to-file" href="'.$file.'">'.$file.$id.'</a><span>'.$filesize.'</span></li>';
+      echo '<li class="mb-1"><div class="'.$icon.'"></div><a class="link-to-file" href="'.$file.$route.'">'.$file.$id.'</a><span>'.$filesize.'</span></li>';
     }
     ?>
     </ul>

@@ -36,3 +36,5 @@ brew cask install android-file-transfer
 brew cask install visual-studio-code 
 #Install VPN Service
 #Install xclip for Linux
+#Install Shutter
+#Install icons

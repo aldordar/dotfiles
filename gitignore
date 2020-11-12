@@ -9,6 +9,7 @@ Thumbs.db
 
 # Always-ignore extensions
 node_modules/
+dist/
 *~
 *.o
 *.class

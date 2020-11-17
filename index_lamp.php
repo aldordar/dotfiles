@@ -9,12 +9,15 @@
   <style>
     ul {
       padding: 0;
+      max-height: 700px;
+      width: 48%;
       list-style-type: none;
+      overflow: auto;
     }
     li {
       background-color: rgba(0, 0, 0, 0.05);
       display: flex;
-      width: 48%;
+      width: 100%;
       padding: 10px;
       border: 2px solid rgba(0, 0, 0, 0.1);
       transition: all .2s;

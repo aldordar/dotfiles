@@ -135,7 +135,9 @@
       (filetype($file) == 'dir') ? $id = '/' : $id = '';
       (filetype($file) == 'dir') ? $filesize = sizeFormat(folderSize($file)) : $filesize = my_filesize(filesize($file));
 
-      echo '<li class="mb-1"><div class="'.$icon.'"></div><a class="link-to-file" href="'.$file.$route.'">'.$file.$id.'</a><span>'.$filesize.'</span></li>';
+      (is_dir($file.$route.'/views')) ? $path = $file.$route.'/views': $path = $file.$route;
+
+      echo '<li class="mb-1"><div class="'.$icon.'"></div><a class="link-to-file" href="'.$path.'">'.$file.$id.'</a><span>'.$filesize.'</span></li>';
     }
     ?>
     </ul>
@@ -146,3 +148,4 @@
 </div>
 </body>
 </html>
+

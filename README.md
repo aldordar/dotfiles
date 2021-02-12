@@ -2,6 +2,37 @@
 
 Mi configuración de MacOS.
 
+### IMPORTANTE ubuntu_prompt!
+
+Inlcuir el srcipt de wp-cli autocomplete de la documentación al final del fichero. Algo así:
+
+```bash
+# bash completion for the `wp` command
+
+_wp_complete() {
+	local OLD_IFS="$IFS"
+	local cur=${COMP_WORDS[COMP_CWORD]}
+
+	IFS=$'\n';  # want to preserve spaces at the end
+	local opts="$(wp cli completions --line="$COMP_LINE" --point="$COMP_POINT")"
+
+	if [[ "$opts" =~ \<file\>\s* ]]
+	then
+		COMPREPLY=( $(compgen -f -- $cur) )
+	elif [[ $opts = "" ]]
+	then
+		COMPREPLY=( $(compgen -f -- $cur) )
+	else
+		COMPREPLY=( ${opts[*]} )
+	fi
+
+	IFS="$OLD_IFS"
+	return 0
+}
+complete -o nospace -F _wp_complete wp
+```
+
+
 ### How to Install
 
 Para realizar toda la instalación a través de la Terminal, lo primero es instalar **XCode**:
